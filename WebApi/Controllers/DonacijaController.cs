@@ -32,7 +32,7 @@ namespace WebApi.Controllers
         [HttpPost]
         public IActionResult unesiDonaciju([FromBody] Donacija podaci)
         {
-            db.Add(podaci);// fino spakovat objekat na frontu
+            db.Add(podaci) ;// fino spakovat objekat na frontu
             db.SaveChanges();
 
             return Ok(podaci);

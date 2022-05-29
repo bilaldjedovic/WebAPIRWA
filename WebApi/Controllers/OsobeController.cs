@@ -15,7 +15,6 @@ namespace WebApi.Controllers
 
         // GET: api/<OsobeController>
         [HttpGet]
-       
         public IActionResult prikaziSveOsobe()
         {
             List<VwSveOsobe> sveOsobe = db.VwSveOsobes.ToList();
@@ -48,9 +47,8 @@ namespace WebApi.Controllers
         [HttpPost]
        public IActionResult unesiDonora([FromBody] Osoba podaci)
         {    
-            db.Add(podaci);// fino spakovat objekat na frontu
+            db.Add(podaci); // fino spakovat objekat na frontu
             db.SaveChanges();
-
             return Ok(podaci);
         }
 
@@ -77,7 +75,6 @@ namespace WebApi.Controllers
                 return NotFound($"Osoba sa id {podaci.Jmbg} nije pronadjena");
             }
             return Ok(osoba);
-
         }
 
         [HttpDelete("{jmbg}")]
@@ -95,6 +92,5 @@ namespace WebApi.Controllers
             }
             return Ok("Obrisano");
         }
-
     }
 }
